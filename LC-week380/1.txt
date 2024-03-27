@@ -1,0 +1,31 @@
+#include <iostream>
+#include <string>
+
+int main() {
+    std::string bigString = "This is a big string containing big words.";
+
+    std::string searchTerm = "big";
+    size_t foundIndex = bigString.find(searchTerm);
+
+    while (foundIndex != std::string::npos) {
+        // Word found, calculate starting and ending indices
+        size_t startingIndex = foundIndex;
+        size_t endingIndex = foundIndex + searchTerm.length() - 1;
+
+        std::cout << "Found at: [" << startingIndex << ", " << endingIndex << "]" << std::endl;
+
+        // Replace characters in the specified range with '0'
+        for (size_t i = startingIndex; i <= endingIndex; ++i) {
+            bigString[i] = '0';
+        }
+
+        // Continue searching for the next occurrence
+        foundIndex = bigString.find(searchTerm, foundIndex + 1);
+    }
+
+    // Output the modified string
+    std::cout << "Modified String: " << bigString << std::endl;
+
+    return 0;
+}
+
