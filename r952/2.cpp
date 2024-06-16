@@ -6,20 +6,11 @@ void solve() {
     int n;
     cin >> n;
 
-    int maxSum = 0;
-    int optimalX = 2;
-
-    for (int x = 2; x <= n; x++) {
-        int sum = 0;
-        for (int k = 1; k * x <= n; k++) {
-            sum += k * x;
-        }
-        if (sum > maxSum) {
-            maxSum = sum;
-            optimalX = x;
-        }
+    if(n ==3 ){
+        cout << 3 <<endl;
+    }else{
+        cout << 2 << endl;
     }
-    cout << optimalX << endl;
 }
 
 int main() {
