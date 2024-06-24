@@ -26,6 +26,7 @@ int main() {
       }
     }
 
+
     int count = 0;
     while (m > 0) {
       for (int i = 0; i < 7; i++) {
@@ -37,7 +38,6 @@ int main() {
       }
       m--;
     }
-
     cout << count << "\n";
   }
 

@@ -7,9 +7,9 @@
 using namespace std;
 
 void solve() {
-    int n, a, b;
+    ll n, a, b;
     cin >> n >> a >> b;
-    int klimit = min(n, b);
+    /* int klimit = min(n, b);
 
     ll sold = 0;
     // sell for b
@@ -22,8 +22,19 @@ void solve() {
         }
     }
 
-    cout << sold << endl;
+    cout << sold << endl; */
+
+
+    if( a >=b){
+        cout << n*a << endl;
+        return;
+    }
+    ll k = min(b-a , n);
+    // k derivation se bhi nikal sakta 
+    cout << (k*b) - (k * (k-1)/2 )+ (n-k) * a << endl;
+
 }
+
 
 int main() {
     ios_base::sync_with_stdio(false);
